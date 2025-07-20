@@ -1,4 +1,5 @@
 #!name=小蚕霸王餐签到
+#!icon=https://github.com/Toperlock/Quantumult/raw/main/icon/Doraemon/Doraemon-1080.png
 [Argument]
 抓取Cookie = switch,true,tag=抓取Cookie
 RunTime = input,"11 8 * * *",tag=执行时间
