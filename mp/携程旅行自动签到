@@ -6,7 +6,7 @@ RunTime = input,"30 7 * * *",tag=自定义执行时间
 
 [Script]
 # BiliBili每日等级任务
-cron {RunTime} script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Ctrip-DailyBonus/Ctrip.js, tag=B站每日等级任务, timeout=15
+cron {RunTime} script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Ctrip-DailyBonus/Ctrip.js, tag=携程旅行每日签到, timeout=5
 
 http-response ^https:\/\/m\.ctrip\.com\/restapi\/soa2\/\d+\/[a-zA-Z]+Login(?:$|\?) requires-body=true script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Ctrip-DailyBonus/Ctrip.js,tag=携程旅行抓取Cookie,enable={抓取Cookie}, timeout=5
 
