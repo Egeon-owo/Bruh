@@ -1,5 +1,6 @@
 #!name=携程旅行自动签到
 #!icon=https://github.com/Toperlock/Quantumult/raw/main/icon/Doraemon/Doraemon-1085.png
+#!desc=
 [Argument]
 抓取Cookie = switch,true,tag=抓取Cookie
 RunTime = input,"11 8 * * *",tag=执行时间
