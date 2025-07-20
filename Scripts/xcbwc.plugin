@@ -1,0 +1,12 @@
+#!name=小蚕霸王餐签到
+[Argument]
+抓取Cookie = switch,true,tag=抓取Cookie
+RunTime = input,"11 8 * * *",tag=执行时间
+
+[Script]
+cron {RunTime} script-path=https://gist.githubusercontent.com/Sliverkiss/250a02315f0a2c99f42da3b3573375c8/raw/xcbwc.js, tag=小蚕霸王餐签到, timeout=60
+
+http-response ^https:\/\/gw\.xiaocantech\.com\/rpc script-path=https://gist.githubusercontent.com/Sliverkiss/250a02315f0a2c99f42da3b3573375c8/raw,requires-body=true,tag=小蚕霸王餐抓取Cookie,enable={抓取Cookie}, timeout=60
+
+[MITM]
+hostname = gw.xiaocantech.com
