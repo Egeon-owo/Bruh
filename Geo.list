@@ -1,5 +1,7 @@
 #geo
 DOMAIN-SUFFIX,geoguessr.com
+#实时通信
+DOMAIN,mtalk.google.com
 #街景
 DOMAIN,maps.googleapis.com
 DOMAIN,streetviewpixels-pa.googleapis.com
