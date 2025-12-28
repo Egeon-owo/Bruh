@@ -39,19 +39,19 @@ config.outbounds.map(i => {
   }
 
   // --- 保留原有的地区分组逻辑 (如果不想要可以删除以下内容) ---
-  if (['hk', 'hk-auto'].includes(i.tag)) {
+  if (['HK'].includes(i.tag)) {
     i.outbounds.push(...getTags(proxies, 🇭🇰))
   }
-  if (['tw', 'tw-auto'].includes(i.tag)) {
+  if (['TW'].includes(i.tag)) {
     i.outbounds.push(...getTags(proxies, 🇨🇳))
   }
-  if (['jp', 'jp-auto'].includes(i.tag)) {
+  if (['JP'].includes(i.tag)) {
     i.outbounds.push(...getTags(proxies, 🇯🇵))
   }
-  if (['sg', 'sg-auto'].includes(i.tag)) {
+  if (['SG'].includes(i.tag)) {
     i.outbounds.push(...getTags(proxies, 🇸🇬))
   }
-  if (['us', 'us-auto'].includes(i.tag)) {
+  if (['US'].includes(i.tag)) {
     i.outbounds.push(...getTags(proxies, 🇺🇸))
   }
 })
