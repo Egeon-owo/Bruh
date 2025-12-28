@@ -15,48 +15,58 @@ let proxies = await produceArtifact({
 
 config.outbounds.push(...proxies)
 
-// 定义正则常量，方便维护
-// 1. HB 分组正则 (注意: / 需要转义为 \/)
+// --- 定义正则常量 ---
+
+// 1. HB 分组正则
 const hbRegex = /家宽|HKT|HKBN|i-Cable|HGC|Hinet|Apol|SeedNet|Singtel|CTM|SoftBank|KDDI|Sonet|Biglobe|SK|KT|LG|Sejong|Verizon|AT&T|Comcast|Frontier|Videotron|\bBT(?!下载)\b|Vodafone|Video-Broadcast|Turk Telekom|Telekom Malaysia\/TM|VNPT|DIGI|JSC Kazakhtelecom|CAFE|Tunisietelecom|Umnia|Starlink/i;
 
-// 2. F 分组正则 (匹配 0.1, 0.2 等倍率，且前后不跟随数字)
+// 2. F 分组正则 (倍率匹配)
 const fRegex = /(?<!\d)(0\.1|0\.2|0\.3|0\.5)(?!\d)/;
 
-config.outbounds.map(i => {
-  // --- 修改点 1: E 和 G 组匹配所有节点 ---
+// 3. EU 分组正则 (新增：包含所有欧洲及周边国家旗帜)
+const euRegex = /🇪🇺|🇮🇪|🇪🇪|🇦🇹|🇧🇬|🇧🇪|🇵🇱|🇩🇰|🇩🇪|🇫🇷|🇫🇮|🇨🇿|🇭🇷|🇱🇻|🇱🇹|🇱🇺|🇵🇹|🇸🇪|🇪🇸|🇬🇷|🇮🇹|🇨🇾|🇭🇺|🇲🇹|🇳🇱|🇷🇴|🇸🇰|🇸🇮|🇨🇭|🇳🇴|🇮🇸|🇱🇮|🇲🇨|🇸🇲|🇻🇦|🇦🇩|🇺🇦|🇧🇾|🇲🇩|🇷🇸|🇧🇦|🇲🇪|🇲🇰|🇦🇱|🇬🇧|🇷🇺|🇹🇷/;
+
+config.outbounds.forEach(i => {
+  // --- E 和 G 组匹配所有节点 ---
   if (['E', 'G'].includes(i.tag)) {
     i.outbounds.push(...getTags(proxies))
   }
 
-  // --- 修改点 2: HB 组匹配特定ISP ---
+  // --- HB 组匹配特定ISP ---
   if (['HB'].includes(i.tag)) {
     i.outbounds.push(...getTags(proxies, hbRegex))
   }
 
-  // --- 修改点 3: F 组匹配特定倍率 ---
+  // --- F 组匹配特定倍率 ---
   if (['F'].includes(i.tag)) {
     i.outbounds.push(...getTags(proxies, fRegex))
   }
 
-  // --- 保留原有的地区分组逻辑 (如果不想要可以删除以下内容) ---
+  // --- EU 组匹配欧洲节点 (新增逻辑) ---
+  if (['EU'].includes(i.tag)) {
+    i.outbounds.push(...getTags(proxies, euRegex))
+  }
+
+  // --- 地区分组逻辑 ---
   if (['HK'].includes(i.tag)) {
-    i.outbounds.push(...getTags(proxies, 🇭🇰))
+    i.outbounds.push(...getTags(proxies, /🇭🇰/))
   }
   if (['TW'].includes(i.tag)) {
-    i.outbounds.push(...getTags(proxies, 🇨🇳))
+    // 这里保留了 🇹🇼 和 🇨🇳 以防万一，如果你只想匹配台湾旗帜，可删掉 "|🇨🇳"
+    i.outbounds.push(...getTags(proxies, /🇹🇼|🇨🇳/))
   }
   if (['JP'].includes(i.tag)) {
-    i.outbounds.push(...getTags(proxies, 🇯🇵))
+    i.outbounds.push(...getTags(proxies, /🇯🇵/))
   }
   if (['SG'].includes(i.tag)) {
-    i.outbounds.push(...getTags(proxies, 🇸🇬))
+    i.outbounds.push(...getTags(proxies, /🇸🇬/))
   }
   if (['US'].includes(i.tag)) {
-    i.outbounds.push(...getTags(proxies, 🇺🇸))
+    i.outbounds.push(...getTags(proxies, /🇺🇸/))
   }
 })
 
-// 兜底逻辑：防止空分组报错
+// 兜底逻辑
 config.outbounds.forEach(outbound => {
   if (Array.isArray(outbound.outbounds) && outbound.outbounds.length === 0) {
     if (!compatible) {
