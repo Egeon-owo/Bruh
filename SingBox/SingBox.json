@@ -1,0 +1,707 @@
+{
+  "log": {
+    "disabled": false,
+    "level": "info",
+    "output": "",
+    "timestamp": true
+  },
+  "experimental": {
+    "clash_api": {
+      "external_controller": "0.0.0.0:9595",
+      "external_ui": "",
+      "external_ui_download_url": "https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages.zip",
+      "external_ui_download_detour": "SELECT",
+      "secret": "30X6zX8MDsQAMEuEANbE",
+      "default_mode": "rule",
+      "access_control_allow_origin": [
+        "*"
+      ],
+      "access_control_allow_private_network": false
+    },
+    "cache_file": {
+      "enabled": true,
+      "path": "cache.db",
+      "cache_id": "",
+      "store_fakeip": false,
+      "store_rdrc": true,
+      "rdrc_timeout": "7d"
+    }
+  },
+  "inbounds": [
+    {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "127.0.0.1",
+      "listen_port": 20122,
+      "tcp_fast_open": true,
+      "tcp_multi_path": true,
+      "udp_fragment": false
+    },
+    {
+      "type": "tun",
+      "tag": "tun-in",
+      "interface_name": "",
+      "address": [
+        "172.18.0.1/30",
+        "fdfe:dcba:9876::1/126"
+      ],
+      "mtu": 9000,
+      "auto_route": true,
+      "strict_route": true,
+      "endpoint_independent_nat": false,
+      "stack": "mixed",
+      "platform": {
+        "http_proxy": {
+          "enabled": true,
+          "server": "127.0.0.1",
+          "server_port": 20122
+        }
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "type": "selector",
+      "tag": "SELECT",
+      "interrupt_exist_connections": true,
+      "outbounds": [
+        "E",
+        "F",
+        "G",
+        "HB",
+        "HK",
+        "TW",
+        "SG",
+        "US",
+        "JP",
+        "EU"
+      ]
+    },
+    {
+      "tag": "E",
+      "type": "selector",
+      "outbounds": []
+    },
+    {
+      "tag": "F",
+      "type": "selector",
+      "outbounds": []
+    },
+    {
+      "tag": "G",
+      "type": "selector",
+      "outbounds": []
+    },
+    {
+      "type": "selector",
+      "tag": "YouTube",
+      "interrupt_exist_connections": true,
+      "outbounds": [
+        "SELECT",
+        "E",
+        "F",
+        "G",
+        "HB",
+        "HK",
+        "TW",
+        "SG",
+        "US",
+        "JP",
+        "EU"
+      ]
+    },
+    {
+      "type": "selector",
+      "tag": "Google",
+      "interrupt_exist_connections": true,
+      "outbounds": [
+        "SELECT",
+        "E",
+        "F",
+        "G",
+        "HB",
+        "HK",
+        "TW",
+        "SG",
+        "US",
+        "JP",
+        "EU"
+      ]
+    },
+    {
+      "type": "selector",
+      "tag": "AI",
+      "interrupt_exist_connections": true,
+      "outbounds": [
+        "SELECT",
+        "E",
+        "F",
+        "G",
+        "HB",
+        "HK",
+        "TW",
+        "SG",
+        "US",
+        "JP",
+        "EU"
+      ]
+    },
+    {
+      "type": "selector",
+      "tag": "Microsoft",
+      "interrupt_exist_connections": true,
+      "outbounds": [
+        "SELECT",
+        "DIRECT",
+        "E",
+        "F",
+        "G",
+        "HB",
+        "HK",
+        "TW",
+        "SG",
+        "US",
+        "JP",
+        "EU"
+      ]
+    },
+    {
+      "type": "selector",
+      "tag": "Apple",
+      "interrupt_exist_connections": true,
+      "outbounds": [
+        "SELECT",
+        "DIRECT",
+        "E",
+        "F",
+        "G",
+        "HB",
+        "HK",
+        "TW",
+        "SG",
+        "US",
+        "JP",
+        "EU"
+      ]
+    },
+    {
+      "type": "selector",
+      "tag": "Emby",
+      "interrupt_exist_connections": true,
+      "outbounds": [
+        "SELECT",
+        "DIRECT",
+        "E",
+        "F",
+        "G",
+        "HB",
+        "HK",
+        "TW",
+        "SG",
+        "US",
+        "JP",
+        "EU"
+      ]
+    },
+    {
+      "type": "selector",
+      "tag": "TikTok",
+      "interrupt_exist_connections": true,
+      "outbounds": [
+        "SELECT",
+        "E",
+        "F",
+        "G",
+        "HB",
+        "HK",
+        "TW",
+        "SG",
+        "US",
+        "JP",
+        "EU"
+      ]
+    },
+    {
+      "type": "selector",
+      "tag": "X",
+      "interrupt_exist_connections": true,
+      "outbounds": [
+        "SELECT",
+        "E",
+        "F",
+        "G",
+        "HB",
+        "HK",
+        "TW",
+        "SG",
+        "US",
+        "JP",
+        "EU"
+      ]
+    },
+    {
+      "type": "selector",
+      "tag": "FaceBook",
+      "interrupt_exist_connections": true,
+      "outbounds": [
+        "SELECT",
+        "E",
+        "F",
+        "G",
+        "HB",
+        "HK",
+        "TW",
+        "SG",
+        "US",
+        "JP",
+        "EU"
+      ]
+    },
+    {
+      "type": "selector",
+      "tag": "Telegram",
+      "interrupt_exist_connections": true,
+      "outbounds": [
+        "SELECT",
+        "E",
+        "F",
+        "G",
+        "HB",
+        "HK",
+        "TW",
+        "SG",
+        "US",
+        "JP",
+        "EU"
+      ]
+    },
+    {
+      "type": "selector",
+      "tag": "Steam",
+      "interrupt_exist_connections": true,
+      "outbounds": [
+        "SELECT",
+        "DIRECT",
+        "E",
+        "F",
+        "G",
+        "HB",
+        "HK",
+        "TW",
+        "SG",
+        "US",
+        "JP",
+        "EU"
+      ]
+    },
+    {
+      "type": "selector",
+      "tag": "Spotify",
+      "interrupt_exist_connections": true,
+      "outbounds": [
+        "SELECT",
+        "E",
+        "F",
+        "G",
+        "HB",
+        "HK",
+        "TW",
+        "SG",
+        "US",
+        "JP",
+        "EU"
+      ]
+    },
+    {
+      "type": "direct",
+      "tag": "DIRECT"
+    },
+    {
+      "type": "selector",
+      "tag": "HK",
+      "interrupt_exist_connections": true,
+      "outbounds": [
+        "HK_AUTO"
+      ]
+    },
+    {
+      "type": "selector",
+      "tag": "HB",
+      "interrupt_exist_connections": true,
+      "outbounds": [
+        ""
+      ]
+    },
+    {
+      "type": "selector",
+      "tag": "TW",
+      "interrupt_exist_connections": true,
+      "outbounds": [
+        "TW_AUTO"
+      ]
+    },
+    {
+      "type": "selector",
+      "tag": "SG",
+      "interrupt_exist_connections": true,
+      "outbounds": [
+        "SG_AUTO"
+      ]
+    },
+    {
+      "type": "selector",
+      "tag": "JP",
+      "interrupt_exist_connections": true,
+      "outbounds": [
+        "JP_AUTO"
+      ]
+    },
+    {
+      "type": "selector",
+      "tag": "US",
+      "interrupt_exist_connections": true,
+      "outbounds": [
+        "US_AUTO"
+      ]
+    },
+    {
+      "type": "selector",
+      "tag": "EU",
+      "interrupt_exist_connections": true,
+      "outbounds": []
+    },
+    {
+      "type": "urltest",
+      "tag": "HK_AUTO",
+      "outbounds": [],
+     "url": "http://connectivitycheck.gstatic.com/generate_204",
+     "interval": "3m",
+     "tolerance": 5,
+     "interrupt_exist_connections": true
+    },
+    {
+      "type": "urltest",
+      "tag": "TW_AUTO",
+      "outbounds": [],
+     "url": "http://connectivitycheck.gstatic.com/generate_204",
+     "interval": "3m",
+     "tolerance": 5,
+     "interrupt_exist_connections": true
+    },
+    {
+      "type": "urltest",
+      "tag": "SG_AUTO",
+      "outbounds": [],
+     "url": "http://connectivitycheck.gstatic.com/generate_204",
+     "interval": "3m",
+     "tolerance": 5,
+     "interrupt_exist_connections": true
+    },
+    {
+      "type": "urltest",
+      "tag": "JP_AUTO",
+      "outbounds": [],
+     "url": "http://connectivitycheck.gstatic.com/generate_204",
+     "interval": "3m",
+     "tolerance": 5,
+     "interrupt_exist_connections": true
+    },
+    {
+      "type": "urltest",
+      "tag": "US_AUTO",
+      "outbounds": [],
+     "url": "http://connectivitycheck.gstatic.com/generate_204",
+     "interval": "3m",
+     "tolerance": 5,
+     "interrupt_exist_connections": true
+    },
+    {
+      "type": "selector",
+      "tag": "GLOBAL",
+      "interrupt_exist_connections": true,
+      "outbounds": [
+        "SELECE",
+        "E",
+        "F",
+        "G",
+        "HB",
+        "HK",
+        "TW",
+        "SG",
+        "US",
+        "JP",
+        "EU"
+      ]
+    }
+  ],
+  "route": {
+    "rules": [
+      {
+        "action": "route",
+        "rule_set": [
+          "Spotify"
+        ],
+        "outbound": "Spotify"
+      },
+      {
+        "action": "route",
+        "rule_set": [
+          "Steam"
+        ],
+        "outbound": "Steam"
+      },
+      {
+        "action": "route",
+        "rule_set": [
+          "Microsoft"
+        ],
+        "outbound": "Microsoft"
+      },
+      {
+        "action": "route",
+        "rule_set": [
+          "AI"
+        ],
+        "outbound": "AI"
+      },
+      {
+        "action": "route",
+        "rule_set": [
+          "FaceBook"
+        ],
+        "outbound": "FaceBook"
+      },
+      {
+        "action": "route",
+        "rule_set": [
+          "X"
+        ],
+        "outbound": "X"
+      },
+      {
+        "action": "route",
+        "rule_set": [
+          "TikTok"
+        ],
+        "outbound": "TikTok"
+      },
+      {
+        "action": "route",
+        "rule_set": [
+          "Apple"
+        ],
+        "outbound": "Apple"
+      },
+      {
+        "action": "route",
+        "rule_set": [
+          "Emby"
+        ],
+        "outbound": "Emby"
+      },
+      {
+        "action": "route",
+        "rule_set": [
+          "Youtube"
+        ],
+        "outbound": "YouTube"
+      },
+      {
+        "action": "route",
+        "rule_set": [
+          "Google"
+        ],
+        "outbound": "Google"
+      },
+      {
+        "action": "route",
+        "rule_set": [
+          "Telegram"
+        ],
+        "outbound": "Telegram"
+      },
+      {
+        "action": "sniff",
+        "inbound": "tun-in"
+      },
+      {
+        "action": "hijack-dns",
+        "protocol": "dns"
+      },
+      {
+        "action": "route",
+        "clash_mode": "DIRECT",
+        "outbound": "DIRECT"
+      },
+      {
+        "action": "route",
+        "clash_mode": "GLOBAL",
+        "outbound": "SELECT"
+      },
+      {
+        "action": "reject",
+        "protocol": "quic"
+      },
+      {
+        "action": "reject",
+        "rule_set": [
+          "Category-Ads"
+        ]
+      },
+      {
+        "action": "route",
+        "rule_set": [
+          "GeoIP-CN"
+        ],
+        "outbound": "SELECT"
+      }
+    ],
+    "rule_set": [
+      {
+        "tag": "Steam",
+        "type": "remote",
+        "url": "https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/sing-box/Rules/Steam.srs",
+        "format": "binary",
+        "download_detour": "SELECT"
+      },
+      {
+        "tag": "Spotify",
+        "type": "remote",
+        "url": "https://raw.githubusercontent.com/DustinWin/ruleset_geodata/refs/heads/sing-box-ruleset/Spotify.srs",
+        "format": "binary",
+        "download_detour": "SELECT"
+      },
+      {
+        "tag": "AI_DustinWin",
+        "type": "remote",
+        "url": "https://raw.githubusercontent.com/DustinWin/ruleset_geodata/refs/heads/sing-box-ruleset/ai.srs",
+        "format": "binary",
+        "download_detour": "SELECT"
+      },
+      {
+        "tag": "Youtube",
+        "type": "remote",
+        "url": "https://raw.githubusercontent.com/DustinWin/ruleset_geodata/refs/heads/sing-box-ruleset/youtube.json",
+        "format": "binary",
+        "download_detour": "SELECT"
+      },
+      {
+        "tag": "FaceBook",
+        "type": "remote",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/refs/heads/rule-set/geosite-facebook.srs",
+        "format": "binary",
+        "download_detour": "SELECT"
+      },
+      {
+        "tag": "X",
+        "type": "remote",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/refs/heads/rule-set/geosite-x.srs",
+        "format": "binary",
+        "download_detour": "SELECT"
+      },
+      {
+        "tag": "Microsoft",
+        "type": "remote",
+        "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/sing/geo/geosite/microsoft.srs",
+        "format": "binary",
+        "download_detour": "SELECT"
+      },
+      {
+        "tag": "Emby",
+        "type": "remote",
+        "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/sing/geo/geosite/category-emby.srs",
+        "format": "binary",
+        "download_detour": "SELECT"
+      },
+      {
+        "tag": "Apple",
+        "type": "remote",
+        "url": "https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/sing-box/Rules/Apple.srs",
+        "format": "binary",
+        "download_detour": "SELECT"
+      },
+      {
+        "tag": "TikTok",
+        "type": "remote",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/refs/heads/rule-set/geosite-tiktok.srs",
+        "format": "binary",
+        "download_detour": "SELECT"
+      },
+      {
+        "tag": "Telegram",
+        "type": "remote",
+        "url": "https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/sing-box/Rules/Telegram.srs",
+        "format": "binary",
+        "download_detour": "SELECT"
+      },
+      {
+        "tag": "Google",
+        "type": "remote",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/refs/heads/rule-set/geosite-google.srs",
+        "format": "binary",
+        "download_detour": "SELECT"
+      },
+      {
+        "tag": "GeoIP-CN",
+        "type": "remote",
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/cn.srs",
+        "format": "binary",
+        "download_detour": "SELECT"
+      }
+    ],
+    "auto_detect_interface": true,
+    "final": "SELECT"
+  },
+  "dns": {
+    "servers": [
+      {
+        "tag": "NovaXNS",
+        "type": "https",
+        "server": "https://46.3.26.20/hrLGzZC-T0c/Windows/dns-query,https://45.249.245.247:5443/hrLGzZC-T0c/Windows/dns-query,https://148.178.21.17/hrLGzZC-T0c/Windows/dns-query"
+      },
+      {
+        "tag": "ali",
+        "type": "https",
+        "server": "223.6.6.6"
+      },
+      {
+        "tag": "fakeip",
+        "type": "fakeip",
+        "inet4_range": "198.18.0.0/15",
+        "inet6_range": "fc00::/18"
+      }
+    ],
+    "rules": [
+      {
+        "clash_mode": "DIRECT",
+        "action": "route",
+        "server": "NovaXNS"
+      },
+      {
+        "clash_mode": "GLOBAL",
+        "action": "route",
+        "server": "NovaXNS"
+      },
+      {
+        "query_type": "HTTPS",
+        "action": "reject"
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "action": "route",
+        "server": "fakeip",
+        "rewrite_ttl": 1
+      }
+    ],
+    "final": "NovaXNS",
+    "independent_cache": true
+  },
+  "disable_cache": false,
+  "disable_expire": false,
+  "independent_cache": false,
+  "final": "NovaXNS",
+  "strategy": "prefer_ipv4"
+}
