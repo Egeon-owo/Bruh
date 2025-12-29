@@ -1,0 +1,23 @@
+{
+  "version": 4,
+  "rules": [
+    {
+      "domain": [
+        "pub1.emby.wtf",
+        "pub2.emby.wtf",
+        "pub3.emby.wtf",
+        "gm.yezi.my",
+        "cf.5msky.com",
+        "emby.oceancloud.asia",
+        "zoxfree.3767483.xyz",
+        "lite.cn2gias.uk",
+        "lite-v6.cn2gias.uk",
+        "public.shrekmedia.org",
+        "emby.kongcheng666.dpdns.org",
+        "emby.misaya.org",
+        "cf.newneeship.com",
+        "cdn.newneeship.com"
+      ]
+    }
+  ]
+}
