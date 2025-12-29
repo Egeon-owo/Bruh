@@ -1,0 +1,16 @@
+{
+  "version": 4,
+  "rules": [
+    {
+      "domain": [
+        "maps.googleapis.com",
+        "streetviewpixels-pa.googleapis.com",
+        "maps.gstatic.com",
+        "mapsresources-pa.googleapis.com"
+      ],
+      "domain_suffix": [
+        "geoguessr.com"
+      ]
+    }
+  ]
+}
