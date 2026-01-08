@@ -7,3 +7,5 @@ DOMAIN,maps.googleapis.com
 DOMAIN,streetviewpixels-pa.googleapis.com
 DOMAIN,maps.gstatic.com
 DOMAIN,mapsresources-pa.googleapis.com
+#
+DOMAIN,map-making.app
