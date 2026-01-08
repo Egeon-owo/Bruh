@@ -6,7 +6,7 @@
         "maps.googleapis.com",
         "streetviewpixels-pa.googleapis.com",
         "maps.gstatic.com",
-        "mapsresources-pa.googleapis.com"
+        "mapsresources-pa.googleapis.com",
         "map-making.app"
       ],
       "domain_suffix": [
