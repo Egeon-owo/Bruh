@@ -3,7 +3,6 @@
   "rules": [
     {
       "domain": [
-        "dig.bdurl.net",
         "mon.zijieapi.com",
         "pc-mon.zijieapi.com",
         "mcs.zijieapi.com"
