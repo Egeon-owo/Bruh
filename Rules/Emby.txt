@@ -18,3 +18,5 @@ DOMAIN,stream-1.miraiemby.com
 DOMAIN,stream-2.miraiemby.com
 DOMAIN,link01.okemby.org
 DOMAIN,link00.okemby.org
+DOMAIN,114514.fuckme.pushgoodcloud.com
+DOMAIN,emby.istyboe.top
