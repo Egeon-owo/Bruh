@@ -2,6 +2,7 @@
 DOMAIN,mon.zijieapi.com
 DOMAIN,pc-mon.zijieapi.com
 DOMAIN,mcs.zijieapi.com
+DOMAIN,dig.bdurl.net
 #网易云音乐
 DOMAIN,clientlog.music.163.com
 DOMAIN,netapm.music.163.com
