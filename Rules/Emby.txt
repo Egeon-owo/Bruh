@@ -20,3 +20,4 @@ DOMAIN,link01.okemby.org
 DOMAIN,link00.okemby.org
 DOMAIN,114514.fuckme.pushgoodcloud.com
 DOMAIN,emby.istyboe.top
+DOMAIN,114514.fuckme.pushgoodcloud.com
