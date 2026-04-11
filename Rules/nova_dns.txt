@@ -1,0 +1,8 @@
+DOMAIN,hk.beta.xns.one
+DOMAIN,hk1.beta.xns.one
+DOMAIN,hk2.beta.xns.one
+DOMAIN,hk.kahkee.xns.one
+DOMAIN,hk.raito.xns.one
+DOMAIN,hk.pro.xns.one
+DOMAIN,hk1.pro.xns.one
+DOMAIN,v.xns.one
